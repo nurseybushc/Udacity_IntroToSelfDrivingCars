@@ -9,13 +9,6 @@
 ###   matrixSum _ sum of matrix A + matrix B
 
 def matrix_addition(matrixA, matrixB):
-    if(len(matrixA) != len(matrixB)):
-        print 'matrices not same shape'
-        return
-    if(len(matrixA[0]) != len(matrixB[0])):
-        print 'matrices not same shape'
-        return
-    
     # initialize matrix to hold the results
     matrixSum = []
     
@@ -24,6 +17,11 @@ def matrix_addition(matrixA, matrixB):
     
     # TODO: write a for loop within a for loop to iterate over
     # the matrices
+    for i in range(len(matrixA)):
+        for j in range(len(matrixA[0])):
+            row.append(matrixA[i][j] + matrixB[i][j])
+        matrixSum.append(row)
+        row = []
     
     # TODO: As you iterate through the matrices, add matching
     # elements and append the sum to the row variable
